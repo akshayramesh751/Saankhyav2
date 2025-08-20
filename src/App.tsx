@@ -117,9 +117,9 @@ const App = () => {
   ];
 
   const teamImages = [
-    "/assets/images/bhargav.jpg",    // Bhargav's photo
-    "/assets/images/shashank.jpg",   // Shashank's photo
-    "/assets/images/vishnu.jpg"      // Vishnu's photo
+    "./assets/images/bhargav.jpg",    // Bhargav's photo
+    "./assets/images/shashank.jpg",   // Shashank's photo
+    "./assets/images/vishnu.jpg"      // Vishnu's photo
   ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -158,7 +158,7 @@ const App = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0 flex items-center h-16">
             <img 
-              src="/assets/logos/output-onlinepngtools.png" 
+              src="./assets/logos/output-onlinepngtools.png" 
               alt="Sāṅkhya Academy Logo"
               className="h-[6.25rem] w-auto max-h-16 md:max-h-[6.25rem] object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
               style={{ maxHeight: '6.25rem' }}
@@ -219,7 +219,7 @@ const App = () => {
             <div className="text-center px-4 max-w-4xl mx-auto">
               <div className="mb-12 mt-8">
                 <img 
-                  src="/assets/logos/Black Trans no word.png" 
+                  src="./assets/logos/Black Trans no word.png" 
                   alt="Sāṅkhya Academy Logo" 
                   className="w-48 h-48 mx-auto mb-8 animate-fade-in-down cursor-pointer hover:scale-105 transition-transform duration-300"
                   onClick={handleExploreNow}
@@ -253,7 +253,7 @@ const App = () => {
             <div className="grid md:grid-cols-2 gap-16 items-center"> {/* Increased gap */}
               <div className="animate-fade-in-left">
                 <img 
-                  src="/assets/images/about.png"
+                  src="./assets/images/about.png"
                   alt="Academy Banner" 
                   className="w-full h-80 object-cover rounded-2xl"
                 />
