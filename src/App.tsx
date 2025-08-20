@@ -110,10 +110,10 @@ const App = () => {
   );
 
   const featureImages = [
-    "/assets/images/library.png",         // Quiet Study Space / Library
-    "/assets/images/sciencelab.png",             // Experiential Learning Lab
-    "/assets/images/campfire-removebg-preview.png",      // Out-Station Learning Experience
-    "/assets/images/outdoor.png"        // Astronomy Club and Book Club
+    "./assets/images/library.png",         // Quiet Study Space / Library
+    "./assets/images/sciencelab.png",             // Experiential Learning Lab
+    "./assets/images/campfire-removebg-preview.png",      // Out-Station Learning Experience
+    "./assets/images/outdoor.png"        // Astronomy Club and Book Club
   ];
 
   const teamImages = [
