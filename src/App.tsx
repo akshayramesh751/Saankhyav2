@@ -214,31 +214,30 @@ const App = () => {
             height: '100vh'
           }}
         >
-          {/* Hero content */}
           <div className="flex-grow flex items-center justify-center">
             <div className="text-center px-4 max-w-4xl mx-auto">
-              <div className="mb-12 mt-8">
+              <div className="mb-8 sm:mb-12 mt-4 sm:mt-8">
                 <img 
                   src="/assets/logos/Black Trans no word.png" 
                   alt="Sāṅkhya Academy Logo" 
-                  className="w-48 h-48 mx-auto mb-8 animate-fade-in-down cursor-pointer hover:scale-105 transition-transform duration-300"
+                  className="w-32 h-32 sm:w-48 sm:h-48 mx-auto mb-6 sm:mb-8 animate-fade-in-down cursor-pointer hover:scale-105 transition-transform duration-300"
                   onClick={handleExploreNow}
                   style={{ cursor: 'pointer' }}
                 />
               </div>
-              <div className="animate-fade-in-up">
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              <div className="animate-fade-in-up space-y-4 sm:space-y-6">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white leading-tight px-2">
                   Welcome To{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500 font-serif">
                     Sāṅkhya Academy
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl text-blue-100 mb-12">
+                <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 sm:mb-12 px-4">
                   A centre where education meets experiential learning
                 </p>
                 <button
                   onClick={handleExploreNow}
-                  className="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-400 transition-all duration-300 transform hover:scale-105 shadow-xl border border-white/30"
+                  className="bg-white/20 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-orange-400 transition-all duration-300 transform hover:scale-105 shadow-xl border border-white/30"
                 >
                   EXPLORE NOW
                 </button>
@@ -581,14 +580,20 @@ const App = () => {
             </div>
             
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
-              <div className="flex items-center space-x-2 text-blue-400 hover:text-orange-400 transition-colors">
-                <Phone className="w-5 h-5" />
-                <span>+91 93807 38490</span>
-              </div>
-              <div className="flex items-center space-x-2 text-blue-400 hover:text-orange-400 transition-colors">
-                <Mail className="w-5 h-5" />
-                <span>admin@saankhya.academy</span>
-              </div>
+              <a
+              href="tel:+919380738490"
+              className="flex items-center space-x-2 text-blue-400 hover:text-orange-400 transition-colors"
+              >
+              <Phone className="w-5 h-5" />
+              <span>+91 93807 38490</span>
+              </a>
+              <a
+              href="mailto:admin@saankhya.academy"
+              className="flex items-center space-x-2 text-blue-400 hover:text-orange-400 transition-colors"
+              >
+              <Mail className="w-5 h-5" />
+              <span>admin@saankhya.academy</span>
+              </a>
             </div>
             
             <div className="flex justify-center space-x-6 mb-8">
