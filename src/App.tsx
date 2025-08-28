@@ -286,7 +286,8 @@ const App = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto"></div>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* First row: ICSE and CBSE */}
               {[
                 {
                   title: 'ICSE',
@@ -295,11 +296,31 @@ const App = () => {
                 {
                   title: 'CBSE',
                   courses: ['Class 9: Math and Science', 'Class 10: Math and Science']
-                },
-                {
-                  title: 'STATE BOARD',
-                  courses: ['Class 9: Math and Science', 'Class 10: Math and Science']
-                },
+                }
+              ].map((board, index) => (
+                <div
+                  key={board.title}
+                  className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex flex-col mx-auto"
+                  style={{ maxWidth: '400px', width: '100%', animationDelay: `${index * 200}ms` }}
+                >
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-serif">{board.title}</h3>
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-900 to-blue-700 rounded-full flex items-center justify-center mx-auto">
+                      <BookOpen className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                  <ul className="space-y-3 flex-grow">
+                    {board.courses.map((course, courseIndex) => (
+                      <li key={courseIndex} className="text-gray-700 font-medium text-center py-2 px-4 bg-white/50 rounded-lg">
+                        {course}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+
+              {/* Second row: PUC I and PUC II */}
+              {[
                 {
                   title: 'PUC I ',
                   subtitle: 'Science',
@@ -312,9 +333,9 @@ const App = () => {
                 }
               ].map((board, index) => (
                 <div
-                  key={index}
-                  className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex flex-col"
-                  style={{ animationDelay: `${index * 200}ms` }}
+                  key={board.title}
+                  className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex flex-col mx-auto"
+                  style={{ maxWidth: '400px', width: '100%', animationDelay: `${(index + 2) * 200}ms` }}
                 >
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 font-serif">{board.title}</h3>
@@ -507,9 +528,9 @@ const App = () => {
                     required
                   />
                   <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email address"
+                    type="tel"
+                    name="phone"
+                    placeholder="Enter your phone number"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-all duration-300"
                     required
                   />
