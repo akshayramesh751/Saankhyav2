@@ -233,7 +233,7 @@ const App = () => {
                   </span>
                 </h1>
                 <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-8 sm:mb-12 px-4">
-                  A centre where education meets experiential learning
+                  Where education meets experiential learning
                 </p>
                 <button
                   onClick={handleExploreNow}
