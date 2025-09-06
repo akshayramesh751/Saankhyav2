@@ -130,8 +130,8 @@ const CoursesSection: React.FC = () => {
   return (
     <section id="courses" className="py-24 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-black mb-8 font-serif text-center drop-shadow-lg">What Parents Actually Want</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto"></div>
+        <h2 className="text-4xl font-bold text-black mb-4 font-serif text-center drop-shadow-lg">What Parents Actually Want</h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto mb-2"></div>
         {/* Tab Navigation */}
         <nav className="w-full flex flex-col items-center mb-12">
           <div className="w-full max-w-2xl mx-auto bg-white-50 rounded-2xl py-4 px-2 flex justify-center shadow-sm relative">

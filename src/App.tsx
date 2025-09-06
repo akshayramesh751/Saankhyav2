@@ -285,7 +285,7 @@ const App = () => {
           {/* Popup Modal for AboutSection */}
           {showAboutPopup && (
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-[10000] bg-black bg-opacity-40 backdrop-blur-sm">
-              <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 relative animate-fade-in-up max-h-[80vh] overflow-y-auto">
+              <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 relative animate-fade-in-up max-h-[80vh] overflow-y-auto mt-16">
                 <button
                   onClick={() => setShowAboutPopup(false)}
                   className="absolute top-10 right-4 text-gray-500 hover:text-orange-500 text-2xl font-bold"
@@ -304,7 +304,7 @@ const App = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4 font-serif">What Do We Offer</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto mb-2"></div>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -361,8 +361,8 @@ const App = () => {
         <section id="features" className="py-10 bg-gradient-to-b from-blue-50 to-white"> {/* Reduced py-20 to py-10 */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-6"> {/* Reduced mb-16 to mb-6 */}
-              <h2 className="text-4xl font-bold text-gray-900 mb-2 font-serif">Why Choose Us</h2> {/* Reduced text-4xl to text-3xl and mb-4 to mb-2 */}
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto"></div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4 font-serif">Why Choose Us</h2> {/* Reduced text-4xl to text-3xl and mb-4 to mb-2 */}
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto mb-1"></div>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

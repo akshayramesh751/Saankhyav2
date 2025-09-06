@@ -37,8 +37,8 @@ const FeaturesSection: React.FC = () => (
   <section id="features" className="py-24 bg-gradient-to-b from-blue-50 to-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-14">
-        <h2 className="text-4xl font-bold text-black-900 mb-6 font-serif drop-shadow-lg">What We Believe</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto"></div>
+        <h2 className="text-4xl font-bold text-black-900 mb-4 font-serif drop-shadow-lg">What We Believe</h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto mb-2"></div>
         <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
           We believe in an education that nurtures the whole person. Here’s what makes our approach unique.
         </p>
