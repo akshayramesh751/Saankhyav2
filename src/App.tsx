@@ -175,7 +175,7 @@ const App = () => {
               <div className="ml-10 flex items-baseline space-x-4">
                 <NavLink href="about" isActive={activeSection === 'about'}>ABOUT</NavLink>
                 <NavLink href="courses" isActive={activeSection === 'courses'}>COURSES</NavLink>
-                <NavLink href="features" isActive={activeSection === 'features'}>WHY US</NavLink>
+                <NavLink href="features" isActive={activeSection === 'features'}>RESOURCES</NavLink>
                 <NavLink href="team" isActive={activeSection === 'team'}>TEAM</NavLink>
                 <NavLink href="contact" isActive={activeSection === 'contact'}>CONTACT</NavLink>
               </div>
