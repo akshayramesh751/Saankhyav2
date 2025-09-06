@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin, BookOpen, Users, Award, Lightbulb } from 'lucide-react';
 
+import CoursesSection from './CoursesSection';
+import FeaturesSection from './FeaturesSection';
+import AboutSection from './AboutSection'; // Make sure this is imported
+
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [formStatus, setFormStatus] = useState('');
+  const [showAboutPopup, setShowAboutPopup] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -246,39 +251,55 @@ const App = () => {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="py-24 bg-gradient-to-b from-white to-blue-50"> {/* Increased padding */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-16 items-center"> {/* Increased gap */}
-              <div className="animate-fade-in-left">
-                <img 
-                  src="/assets/images/about.png"
-                  alt="Academy Banner" 
-                  className="w-full h-80 object-cover rounded-2xl"
-                />
-              </div>
-              <div className="animate-fade-in-right space-y-8"> {/* Added vertical spacing */}
-                <h2 className="text-5xl font-bold text-gray-900 mb-8 leading-tight"> {/* Increased font and margin */}
-                  Empowering Minds, Shaping Futures at{' '}
-                  <span className="text-blue-900 font-serif">Sāṅkhya Academy</span>
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-10"> {/* Increased font and line height */}
-                  At Sāṅkhya Academy, we strive to be a center of excellence where education meets experiential learning. 
-                  With a name rooted in the philosophy of knowledge and analysis, we aim to cultivate critical 
-                  thinking, application skills and a passion for learning in every student.
-                </p>
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="bg-blue-900 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  ENROLL NOW
-                </button>
+        {/* About Section (main) */}
+        <div className="relative">
+          <section id="about" className="py-24 bg-gradient-to-b from-white to-blue-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid md:grid-cols-2 gap-16 items-center">
+                <div className="animate-fade-in-left">
+                  <img 
+                    src="/assets/images/about.png"
+                    alt="Academy Banner" 
+                    className="w-full h-80 object-cover rounded-2xl"
+                  />
+                </div>
+                <div className="animate-fade-in-right space-y-8">
+                  <h2 className="text-5xl font-bold text-gray-900 mb-8 leading-tight">
+                    Empowering Minds, Shaping Futures at{' '}
+                    <span className="text-blue-900 font-serif">Sāṅkhya Academy</span>
+                  </h2>
+                  <p className="text-lg text-gray-600 leading-relaxed mb-10">
+                    "What started as projects in schools and NGOs became Sāṅkhya Academy — not just a tuition centre, but a movement. Founded by us, but truly belonging to students, parents, and teachers who built it together."
+                  </p>
+                  <button
+                    onClick={() => setShowAboutPopup(true)}
+                    className="bg-blue-900 text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    LEARN MORE
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Courses Section */}
+          {/* Popup Modal for AboutSection */}
+          {showAboutPopup && (
+              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-[10000] bg-black bg-opacity-40 backdrop-blur-sm">
+              <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 relative animate-fade-in-up max-h-[80vh] overflow-y-auto">
+                <button
+                  onClick={() => setShowAboutPopup(false)}
+                  className="absolute top-10 right-4 text-gray-500 hover:text-orange-500 text-2xl font-bold"
+                  aria-label="Close"
+                >
+                  &times;
+                </button>
+                <AboutSection />
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Courses Section (main) */}
         <section id="courses" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -286,84 +307,61 @@ const App = () => {
               <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto"></div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* First row: ICSE and CBSE */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* All boards/courses in one row */}
               {[
-                {
-                  title: 'ICSE',
-                  courses: ['Class 8: Math and Science', 'Class 9: Math and Science', 'Class 10: Math and Science']
-                },
-                {
-                  title: 'CBSE',
-                  courses: ['Class 9: Math and Science', 'Class 10: Math and Science']
-                }
+          {
+            title: 'ICSE',
+            courses: ['Class 8: Math and Science', 'Class 9: Math and Science', 'Class 10: Math and Science']
+          },
+          {
+            title: 'CBSE',
+            courses: ['Class 8: Math and Science','Class 9: Math and Science', 'Class 10: Math and Science']
+          },
+          {
+            title: 'PUC I',
+            subtitle: 'Science',
+            courses: ['KCET', 'JEE', 'Other competetive exams']
+          },
+          {
+            title: 'PUC II',
+            subtitle: 'Science',
+            courses: ['KCET', 'JEE', 'Other competetive exams']
+          }
               ].map((board, index) => (
-                <div
-                  key={board.title}
-                  className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex flex-col mx-auto"
-                  style={{ maxWidth: '400px', width: '100%', animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-serif">{board.title}</h3>
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-900 to-blue-700 rounded-full flex items-center justify-center mx-auto">
-                      <BookOpen className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
-                  <ul className="space-y-3 flex-grow">
-                    {board.courses.map((course, courseIndex) => (
-                      <li key={courseIndex} className="text-gray-700 font-medium text-center py-2 px-4 bg-white/50 rounded-lg">
-                        {course}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <div
+            key={board.title}
+            className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex flex-col mx-auto"
+            style={{ minWidth: '220px', maxWidth: '320px', width: '100%', animationDelay: `${index * 200}ms` }}
+          >
+            <div className="text-center mb-4">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 font-serif">{board.title}</h3>
+              {board.subtitle && (
+                <h4 className="text-base font-semibold text-blue-700 mb-2">{board.subtitle}</h4>
+              )}
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-900 to-blue-700 rounded-full flex items-center justify-center mx-auto">
+                <BookOpen className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            <ul className="space-y-2 flex-grow">
+              {board.courses.map((course, courseIndex) => (
+                <li key={courseIndex} className="text-gray-700 font-medium text-center py-1 px-2 bg-white/50 rounded-lg text-sm">
+            {course}
+                </li>
               ))}
-
-              {/* Second row: PUC I and PUC II */}
-              {[
-                {
-                  title: 'PUC I ',
-                  subtitle: 'Science',
-                  courses: ['KCET', 'JEE', 'Other competetive exams']
-                },
-                {
-                  title: 'PUC II',
-                  subtitle: 'Science',
-                  courses: ['KCET', 'JEE', 'Other competetive exams']
-                }
-              ].map((board, index) => (
-                <div
-                  key={board.title}
-                  className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex flex-col mx-auto"
-                  style={{ maxWidth: '400px', width: '100%', animationDelay: `${(index + 2) * 200}ms` }}
-                >
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 font-serif">{board.title}</h3>
-                    {board.subtitle && (
-                      <h4 className="text-lg font-semibold text-blue-700 mb-4">{board.subtitle}</h4>
-                    )}
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-900 to-blue-700 rounded-full flex items-center justify-center mx-auto">
-                      <BookOpen className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
-                  <ul className="space-y-3 flex-grow">
-                    {board.courses.map((course, courseIndex) => (
-                      <li key={courseIndex} className="text-gray-700 font-medium text-center py-2 px-4 bg-white/50 rounded-lg">
-                        {course}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            </ul>
+          </div>
               ))}
             </div>
           </div>
         </section>
+        <CoursesSection />
 
-        {/* Features Section */}
-        <section id="features" className="py-20 bg-gradient-to-b from-blue-50 to-white">
+        {/* Features Section (main) */}
+        <section id="features" className="py-10 bg-gradient-to-b from-blue-50 to-white"> {/* Reduced py-20 to py-10 */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 font-serif">Why Choose Us</h2>
+            <div className="text-center mb-6"> {/* Reduced mb-16 to mb-6 */}
+              <h2 className="text-4xl font-bold text-gray-900 mb-2 font-serif">Why Choose Us</h2> {/* Reduced text-4xl to text-3xl and mb-4 to mb-2 */}
               <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto"></div>
             </div>
             
@@ -399,6 +397,7 @@ const App = () => {
             </div>
           </div>
         </section>
+        <FeaturesSection />
 
         {/* Team Section */}
         <section id="team" className="py-20 bg-gradient-to-br from-blue-900 to-blue-800">
@@ -447,7 +446,7 @@ const App = () => {
         <section id="contact" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 font-serif">Contact Us</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4 font-serif">Reach Out To Us</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto"></div>
             </div>
             
@@ -574,14 +573,14 @@ const App = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800">
+        <section className="py-10 bg-gradient-to-r from-blue-900 to-blue-800">
           <div className="max-w-4xl mx-auto text-center px-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               Join Sāṅkhya Academy now and unlock your full potential with our expert guidance!
             </h2>
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-400 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg hover:bg-orange-400 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               CONTACT US
             </button>
