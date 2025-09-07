@@ -3,7 +3,8 @@ import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin, B
 
 import CoursesSection from './CoursesSection';
 import FeaturesSection from './FeaturesSection';
-import AboutSection from './AboutSection'; // Make sure this is imported
+import AboutSection from './AboutSection';
+import Chatbot from './Chatbot'; // <-- Import the Chatbot component
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -211,7 +212,7 @@ const App = () => {
         {/* Hero Section */}
         <section 
           id="hero" 
-          className="fixed inset-0 flex flex-col z-[100] bg-gradient-to-br from-blue-900/30 via-blue-800/30 to-blue-700/30 backdrop-blur-md transition-all duration-700 ease-in-out transform"
+          className="fixed inset-0 flex flex-col z-[10000] bg-gradient-to-br from-blue-900/30 via-blue-800/30 to-blue-700/30 backdrop-blur-md transition-all duration-700 ease-in-out transform"
           style={{ 
             opacity: isTransitioning ? 0 : 1,
             transform: isTransitioning ? 'translateY(-100%)' : 'translateY(0)',
@@ -651,6 +652,8 @@ const App = () => {
           </div>
         </footer>
       </div>
+        {/* Floating Chatbot Widget */}
+        <Chatbot />
     </div>
   );
 };
