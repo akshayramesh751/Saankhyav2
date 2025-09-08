@@ -12,6 +12,7 @@ const App = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [formStatus, setFormStatus] = useState('');
   const [showAboutPopup, setShowAboutPopup] = useState(false);
+  const [isHeroVisible, setIsHeroVisible] = useState(true); // <-- New state for hero visibility
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,7 +82,7 @@ const App = () => {
   // Update the handleExploreNow function
   const handleExploreNow = () => {
     setIsTransitioning(true);
-    
+
     setTimeout(() => {
       const element = document.getElementById('about');
       if (element) {
@@ -90,7 +91,7 @@ const App = () => {
           block: 'start'
         });
       }
-      
+
       setTimeout(() => {
         const hero = document.getElementById('hero');
         if (hero) {
@@ -98,9 +99,11 @@ const App = () => {
         }
         document.body.style.overflow = 'auto';
         setIsTransitioning(false);
+        setIsHeroVisible(false); // <-- Hide chatbot when hero is hidden
       }, 700);
     }, 700);
   };
+
   const NavLink = ({ href, children, isActive }: { href: string; children: React.ReactNode; isActive: boolean }) => (
     <button
       onClick={() => scrollToSection(href)}
@@ -155,6 +158,11 @@ const App = () => {
       setFormStatus('');
     }, 3000);
   };
+
+  useEffect(() => {
+    // On mount, hero is visible
+    setIsHeroVisible(true);
+  }, []);
 
   return (
     <div className="relative">
@@ -255,6 +263,37 @@ const App = () => {
         {/* About Section (main) */}
         <div className="relative">
           <section id="about" className="py-24 bg-gradient-to-b from-white to-blue-50">
+            {/* 
+            Marquee Announcement 
+            <div className="overflow-hidden mb-8">
+              <div className="relative w-full h-12 flex items-center">
+              <div className="absolute left-0 top-0 w-full h-full pointer-events-none">
+                <div className="animate-marquee whitespace-nowrap flex items-center gap-12 text-xl font-bold drop-shadow-lg">
+                <span className="flex items-center gap-2">
+                  <span className="animate-pulse text-yellow-400 drop-shadow-[0_0_8px_rgba(255,255,0,0.7)]">📢</span>
+                  Admissions Open! Call Now
+                  <a
+                  href="tel:+919380738490"
+                  className="animate-pulse text-blue-900 drop-shadow-[0_0_8px_rgba(30,64,175,0.7)] underline hover:text-orange-500 transition-colors"
+                  style={{ textDecorationThickness: '2px' }}
+                  >
+                  <span className="ml-1">📞 +91 93807 38490</span>
+                  </a>
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="animate-pulse text-yellow-400 drop-shadow-[0_0_8px_rgba(255,255,0,0.7)]">✨</span>
+                  Limited Seats Available
+                  <span className="animate-pulse text-orange-500 drop-shadow-[0_0_8px_rgba(255,165,0,0.7)]">🚀</span>
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="animate-pulse text-yellow-400 drop-shadow-[0_0_8px_rgba(255,255,0,0.7)]">🎓</span>
+                  Join Sāṅkhya Academy Today!
+                </span>
+                </div>
+              </div>
+              </div>
+            </div>
+            */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 <div className="animate-fade-in-left">
@@ -270,7 +309,7 @@ const App = () => {
                     <span className="text-blue-900 font-serif">Sāṅkhya Academy</span>
                   </h2>
                   <p className="text-lg text-gray-600 leading-relaxed mb-10">
-                    "What started as projects in schools and NGOs became Sāṅkhya Academy — not just a tuition centre, but a movement. Founded by us, but truly belonging to students, parents, and teachers who built it together."
+                    "What started as projects in schools and NGOs became Sāṅkhya Academy — not just a tuition centre, but a movement. Founded by us, but truly belonging to students, parents and teachers who built it together."
                   </p>
                   <button
                     onClick={() => setShowAboutPopup(true)}
@@ -652,10 +691,12 @@ const App = () => {
           </div>
         </footer>
       </div>
-        {/* Floating Chatbot Widget */}
-        <Chatbot />
+        {/* Floating Chatbot Widget - only show when hero is NOT visible */}
+        {!isHeroVisible && <Chatbot />}
     </div>
   );
 };
 
 export default App;
+
+

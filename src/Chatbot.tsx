@@ -115,7 +115,7 @@ const Chatbot: React.FC = () => {
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 bg-blue-900 text-white rounded-t-2xl">
-              <span className="font-bold text-lg">Sāṅkhya Chatbot</span>
+              <span className="font-bold text-lg">Sāṅkhya Support</span>
               <button
                 onClick={handleClose}
                 className="text-white hover:text-orange-400 transition-colors"

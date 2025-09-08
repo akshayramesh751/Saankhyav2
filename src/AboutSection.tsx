@@ -1,11 +1,20 @@
 import React from "react";
 
 const AboutSection: React.FC = () => (
-  <section id="about" className="py-20 bg-gradient-to-b from-white to-blue-50">
-    <div className="max-w-2xl mx-auto px-4">
+  <section id="about" className="py-20 bg-gradient-to-b from-white to-blue-50 relative">
+    {/* Watermark background image */}
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+      <img
+        src="/assets/logos/Black Trans no word.png"
+        alt="Watermark"
+        className="w-2/3 max-w-lg opacity-10 object-contain mx-auto"
+        style={{ filter: "blur(1px)" }}
+      />
+    </div>
+    <div className="relative z-10 max-w-2xl mx-auto px-4">
       <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center font-serif">Our Story</h2>
       <p className="text-lg text-gray-700 mb-6">
-        Our journey began with small projects in schools, colleges, and NGOs — from slum adoption to awareness drives and consultancy work. At every step, one cause stood out: education — for students, parents, and teachers.
+        Our journey began with small projects in schools, colleges and NGOs — from slum adoption to awareness drives and consultancy work. At every step, one cause stood out: education — for students, parents and teachers.
       </p>
       <p className="text-lg text-gray-700 mb-6">
         What started as projects grew into startups and organizations. Yet the need for something bigger and more impactful remained. Inspired by these words we knew it was time for the big leap.
@@ -18,7 +27,7 @@ const AboutSection: React.FC = () => (
         That leap became Sāṅkhya Academy — not just a tuition centre, but a movement to make learning meaningful.
       </p>
       <p className="text-lg text-gray-700">
-        We started building Sāṅkhya, but soon realized it was a community waiting to come alive. Founded by us, but truly belonging to students, parents, and teachers.
+        We started building Sāṅkhya, but soon realized it was a community waiting to come alive. Founded by us, but truly belonging to students, parents and teachers.
       </p>
     </div>
   </section>
