@@ -5,6 +5,8 @@ import CoursesSection from './CoursesSection';
 import FeaturesSection from './FeaturesSection';
 import AboutSection from './AboutSection';
 import Chatbot from './Chatbot'; // <-- Import the Chatbot component
+import AboutApplyButton from './AdmnForm';
+import ImageGallerySection from './ImageGallery';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +18,7 @@ const App = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'courses', 'features', 'team', 'contact']; // Remove 'home'
+      const sections = ['about', 'courses', 'features', 'gallery', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -125,12 +127,6 @@ const App = () => {
     "/assets/images/outdoor.png"        // Astronomy Club and Book Club
   ];
 
-  const teamImages = [
-    "/assets/images/bhargav.jpg",    // Bhargav's photo
-    "/assets/images/shashank.jpg",   // Shashank's photo
-    "/assets/images/vishnu.jpg"      // Vishnu's photo
-  ];
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -185,7 +181,7 @@ const App = () => {
                 <NavLink href="about" isActive={activeSection === 'about'}>ABOUT</NavLink>
                 <NavLink href="courses" isActive={activeSection === 'courses'}>COURSES</NavLink>
                 <NavLink href="features" isActive={activeSection === 'features'}>RESOURCES</NavLink>
-                <NavLink href="team" isActive={activeSection === 'team'}>TEAM</NavLink>
+                <NavLink href="gallery" isActive={activeSection === 'gallery'}>GALLERY</NavLink>
                 <NavLink href="contact" isActive={activeSection === 'contact'}>CONTACT</NavLink>
               </div>
             </div>
@@ -207,7 +203,7 @@ const App = () => {
             <NavLink href="about" isActive={activeSection === 'about'}>ABOUT</NavLink>
             <NavLink href="courses" isActive={activeSection === 'courses'}>COURSES</NavLink>
             <NavLink href="features" isActive={activeSection === 'features'}>WHY US</NavLink>
-            <NavLink href="team" isActive={activeSection === 'team'}>TEAM</NavLink>
+            <NavLink href="gallery" isActive={activeSection === 'gallery'}>GALLERY</NavLink>
             <NavLink href="contact" isActive={activeSection === 'contact'}>CONTACT</NavLink>
           </div>
         </div>
@@ -319,9 +315,9 @@ const App = () => {
                   </button>
                 </div>
               </div>
+              
             </div>
           </section>
-
           {/* Popup Modal for AboutSection */}
           {showAboutPopup && (
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-[10000] bg-black bg-opacity-40 backdrop-blur-sm">
@@ -439,47 +435,9 @@ const App = () => {
         </section>
         <FeaturesSection />
 
-        {/* Team Section */}
-        <section id="team" className="py-20 bg-gradient-to-br from-blue-900 to-blue-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4 font-serif">Meet the Team</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-orange-400 to-orange-500 mx-auto"></div>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: 'Bhargav S Upadhya',
-                  description: 'A Maths and Physics Admirer and a Gym Rat. Always ready to lift weights and solve equations.'
-                },
-                {
-                  name: 'Shashank Ramamurthy',
-                  description: 'A Chemistry and Biology Enthusiast and a Great Listener. Always ready to help students with their problems.'
-                },
-                {
-                  name: 'Vishnu Ramesh',
-                  description: 'A Physics and Maths Buff and a Curious Learner. Loves exploring the wonders of astronomy.'
-                }
-              ].map((member, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
-                    <img 
-                      src={teamImages[index]}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <p className="text-blue-100 mb-6 italic">"{member.description}"</p>
-                  <h3 className="text-2xl font-bold text-white font-serif">{member.name}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Gallery Section */}
+        <section id="gallery">
+          <ImageGallerySection />
         </section>
 
         {/* Contact Section */}
@@ -691,6 +649,7 @@ const App = () => {
           </div>
         </footer>
       </div>
+        {!isHeroVisible && <AboutApplyButton />} 
         {/* Floating Chatbot Widget - only show when hero is NOT visible */}
         {!isHeroVisible && <Chatbot />}
     </div>
