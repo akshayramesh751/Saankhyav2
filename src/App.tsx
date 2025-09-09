@@ -635,7 +635,7 @@ const App = () => {
             
             <div className="text-center text-gray-400">
               <p>
-                Designed by{' '}
+                Designed & Developed by{' '}
                 <a
                   href="https://www.linkedin.com/in/akshay-ramesh-201371339"
                   target="_blank"
