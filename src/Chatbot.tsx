@@ -92,7 +92,10 @@ const Chatbot: React.FC = () => {
     <>
       {/* Floating Chat Button */}
       <motion.button
-        className="fixed bottom-6 right-6 z-[99999] bg-blue-900 text-white w-16 h-16 rounded-full shadow-xl flex items-center justify-center text-3xl hover:bg-orange-500 transition-colors"
+        className="fixed bottom-6 right-6 z-[99999] bg-blue-900 text-white w-16 h-16 rounded-full shadow-xl flex items-center justify-center text-3xl hover:bg-orange-500 transition-colors
+    sm:bottom-6
+    bottom-20
+  "
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setOpen(true)}

@@ -52,12 +52,13 @@ const ImageGallerySection: React.FC = () => {
                 key={item.id}
                 className="flex-shrink-0 w-[50vw] max-w-[680px] h-[380px] rounded-2xl overflow-hidden shadow-xl bg-white relative
                   sm:w-[50vw] sm:max-w-[680px] sm:h-[380px]
-                  w-[90vw] max-w-[95vw] h-[220px]  // mobile: one image at a time"
+                  w-[90vw] max-w-[95vw] h-[220px]"
                 style={{ scrollSnapAlign: 'start' }}
               >
                 <img
                   src={item.imagePath}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                   draggable={false}
                   style={{ userSelect: 'none' }}

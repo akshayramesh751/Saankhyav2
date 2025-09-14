@@ -60,63 +60,87 @@ const CoursesSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"structured" | "handsOn" | "support">("structured");
   const [fade, setFade] = useState(true);
   const chartRef = useRef<HTMLCanvasElement | null>(null);
+  const chartContainerRef = useRef<HTMLDivElement | null>(null);
+  const chartInstanceRef = useRef<Chart | null>(null);
 
   useEffect(() => {
-    const ctx = chartRef.current?.getContext("2d");
-    let chartInstance: Chart | undefined;
+    let observer: IntersectionObserver | null = null;
+    let chartTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    if (ctx) {
-      chartInstance = new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: gradeLabels,
-          datasets: [
-            {
-              label: "Board Exam Focus",
-              data: boardExamData,
-              backgroundColor: "#2563eb",
-              stack: "Stack 0",
-            },
-            {
-              label: "Competitive Exam Foundation",
-              data: competitiveExamData,
-              backgroundColor: "#f59e42",
-              stack: "Stack 0",
-            },
-          ],
+    if (chartContainerRef.current && chartRef.current) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !chartInstanceRef.current) {
+            chartTimeout = setTimeout(() => {
+              const ctx = chartRef.current?.getContext("2d");
+              if (ctx) {
+                chartInstanceRef.current = new Chart(ctx, {
+                  type: "bar",
+                  data: {
+                    labels: gradeLabels,
+                    datasets: [
+                      {
+                        label: "Board Exam Focus",
+                        data: boardExamData,
+                        backgroundColor: "#2563eb",
+                        stack: "Stack 0",
+                      },
+                      {
+                        label: "Competitive Exam Foundation",
+                        data: competitiveExamData,
+                        backgroundColor: "#f59e42",
+                        stack: "Stack 0",
+                      },
+                    ],
+                  },
+                  options: {
+                    indexAxis: "y",
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        position: "bottom",
+                        labels: {
+                          font: { size: 14 },
+                        },
+                      },
+                      title: {
+                        display: false,
+                      },
+                    },
+                    scales: {
+                      x: {
+                        stacked: true,
+                        max: 100,
+                        ticks: { font: { size: 12 } },
+                        title: { display: true, text: "% Focus" },
+                      },
+                      y: {
+                        stacked: true,
+                        ticks: { font: { size: 12 } },
+                      },
+                    },
+                  },
+                });
+              }
+            }, 400); // <-- Add a 400ms delay before chart creation
+          }
         },
-        options: {
-          indexAxis: "y",
-          responsive: true,
-          plugins: {
-            legend: {
-              position: "bottom",
-              labels: {
-                font: { size: 14 },
-              },
-            },
-            title: {
-              display: false,
-            },
-          },
-          scales: {
-            x: {
-              stacked: true,
-              max: 100,
-              ticks: { font: { size: 12 } },
-              title: { display: true, text: "% Focus" },
-            },
-            y: {
-              stacked: true,
-              ticks: { font: { size: 12 } },
-            },
-          },
-        },
-      });
+        { threshold: 0.3 }
+      );
+      observer.observe(chartContainerRef.current);
     }
 
     return () => {
-      chartInstance?.destroy();
+      if (observer && chartContainerRef.current) {
+        observer.unobserve(chartContainerRef.current);
+      }
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+        chartInstanceRef.current = null;
+      }
+      if (chartTimeout) {
+        clearTimeout(chartTimeout);
+      }
     };
   }, []);
 
@@ -182,7 +206,10 @@ const CoursesSection: React.FC = () => {
           <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
             Our curriculum is carefully designed to build a strong academic foundation, progressively increasing focus on competitive exams as students advance through higher grades.
           </p>
-          <div className="chart-container mx-auto max-w-xl bg-white/70 backdrop-blur-lg rounded-xl shadow-xl p-4">
+          <div
+            ref={chartContainerRef}
+            className="chart-container mx-auto max-w-xl bg-white/70 backdrop-blur-lg rounded-xl shadow-xl p-4"
+          >
             <canvas id="programsChart" ref={chartRef} height={220}></canvas>
           </div>
         </div>
