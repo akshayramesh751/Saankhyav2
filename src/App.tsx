@@ -571,30 +571,54 @@ const App = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-10 bg-gradient-to-r from-blue-900 to-blue-800">
-          <div className="max-w-4xl mx-auto text-center px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-              Join Sāṅkhya Academy now and unlock your full potential with our expert guidance!
-            </h2>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg hover:bg-orange-400 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl"
-            >
-              CONTACT US
-            </button>
+       <section className="py-10 bg-gradient-to-r from-blue-900 to-blue-800 relative overflow-hidden">
+           {/* Animated floating math symbols */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+           {/* Corners */}
+              <span className="absolute left-6 top-6 text-5xl text-white/20 animate-bounce-diag select-none">π</span>
+              <span className="absolute right-6 top-6 text-6xl text-orange-300/30 animate-bounce-diag-rev select-none">∑</span>
+              <span className="absolute left-6 bottom-6 text-4xl text-blue-200/30 animate-bounce-diag select-none">∞</span>
+              <span className="absolute right-6 bottom-6 text-5xl text-white/20 animate-bounce-diag-rev select-none">√</span>
+           {/* Sides */}
+              <span className="absolute left-0 top-1/2 text-6xl text-orange-300/30 animate-bounce-horiz select-none">∫</span>
+              <span className="absolute right-0 top-1/3 text-4xl text-blue-200/30 animate-bounce-horiz-rev select-none">Δ</span>
+              <span className="absolute left-1/2 top-0 text-5xl text-white/20 animate-bounce-vert select-none">α</span>
+              <span className="absolute left-1/2 bottom-0 text-6xl text-orange-300/30 animate-bounce-vert-rev select-none">β</span>
+              <span className="absolute left-0 top-0 text-4xl text-orange-300/30 animate-bounce-diag select-none">Σ</span>
+              <span className="absolute right-0 top-0 text-5xl text-blue-200/30 animate-bounce-diag-rev select-none">θ</span>
+              <span className="absolute left-0 bottom-0 text-5xl text-white/20 animate-bounce-diag select-none">λ</span>
+              <span className="absolute right-0 bottom-0 text-6xl text-orange-300/30 animate-bounce-diag-rev select-none">Ω</span>
+              <span className="absolute right-1/4 top-0 text-5xl text-orange-300/30 animate-bounce-vert-rev select-none">μ</span>
+              <span className="absolute left-1/4 bottom-0 text-4xl text-white/20 animate-bounce-vert select-none">δ</span>
+              <span className="absolute left-1/3 top-1/3 text-5xl text-orange-300/30 animate-bounce-middle select-none">∇</span>
+              <span className="absolute left-1/4 top-1/3 text-5xl text-orange-300/30 animate-bounce-middle select-none">∇</span>
+              <span className="absolute left-1/2 top-1/2 text-6xl text-blue-200/30 animate-bounce-middle-rev select-none">Ψ</span>
+              <span className="absolute right-1/4 top-1/2 text-5xl text-white/20 animate-bounce-middle select-none">φ</span>
+              <span className="absolute left-1/3 bottom-1/3 text-6xl text-orange-300/30 animate-bounce-middle-rev select-none">ζ</span>
+              <span className="absolute right-1/3 bottom-1/2 text-5xl text-blue-200/30 animate-bounce-middle select-none">η</span>
+              <span className="absolute left-1/2 top-1/4 text-5xl text-white/20 animate-bounce-middle-rev select-none">κ</span>
           </div>
-        </section>
+  <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+      Join Sāṅkhya Academy now and unlock your full potential with our expert guidance!
+    </h2>
+    <button
+      onClick={() => scrollToSection('contact')}
+      className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg hover:bg-orange-400 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl"
+    >
+      CONTACT US
+    </button>
+  </div>
+</section>
 
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h3 className="text-2xl font-bold mb-6">About Us</h3>
-              <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                At Sāṅkhya Academy, we are dedicated to shaping young minds with a nurturing environment that inspires curiosity and excellence. 
-                Our expert tutors bring years of experience and a passion for teaching, ensuring every student receives personalized attention. 
-                By focusing on experiential, application-based learning, we help students deeply understand concepts and connect them to real-world scenarios.
-              </p>
+                <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Sāṅkhya Academy nurtures curiosity and excellence through expert tutors and personalized, experiential learning—empowering students to master concepts and apply them in real life.
+                </p>
             </div>
             
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
