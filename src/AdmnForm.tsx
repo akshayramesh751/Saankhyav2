@@ -89,16 +89,16 @@ const ApplyNowModal: React.FC<{ open: boolean; onClose: () => void }> = ({ open,
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Student's Class</label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Student's Grade</label>
                 <select
                   name="student_class"
                   required
                   className="w-full px-4 py-2 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition-all duration-300 font-medium"
                 >
-                  <option value="">Select Class</option>
-                  <option>Class 8</option>
-                  <option>Class 9</option>
-                  <option>Class 10</option>
+                  <option value="">Select Grade</option>
+                  <option>Grade 8</option>
+                  <option>Grade 9</option>
+                  <option>Grade 10</option>
                   <option>PU I</option>
                   <option>PU II</option>
                 </select>
@@ -179,7 +179,10 @@ export default function AboutApplyButton() {
       <div className="fixed right-6 top-24 ">
         <button
           onClick={() => setOpen(true)}
-          className="bg-white text-blue-900 border border-blue-900 px-4 py-2 rounded-full font-semibold text-md shadow-lg hover:bg-blue-900 hover:text-white transition-all duration-300"
+          className="bg-white text-blue-900 border border-blue-900 px-4 py-2 rounded-full font-semibold text-md shadow-lg hover:bg-blue-900 hover:text-white transition-all duration-300
+            ring-2 ring-blue-400 ring-offset-2
+            animate-glow-border
+            "
         >
           APPLY NOW
         </button>

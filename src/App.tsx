@@ -7,6 +7,7 @@ import AboutSection from './AboutSection';
 import Chatbot from './Chatbot'; // <-- Import the Chatbot component
 import AboutApplyButton from './AdmnForm';
 import ImageGallerySection from './ImageGallery';
+import AnimatedSymbols from './AnimatedSymbols';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -572,32 +573,10 @@ const App = () => {
 
         {/* CTA Section */}
        <section className="py-10 bg-gradient-to-r from-blue-900 to-blue-800 relative overflow-hidden">
-           {/* Animated floating math symbols */}
-          <div className="absolute inset-0 pointer-events-none z-0">
-           {/* Corners */}
-              <span className="absolute left-6 top-6 text-5xl text-white/20 animate-bounce-diag select-none">π</span>
-              <span className="absolute right-6 top-6 text-6xl text-orange-300/30 animate-bounce-diag-rev select-none">∑</span>
-              <span className="absolute left-6 bottom-6 text-4xl text-blue-200/30 animate-bounce-diag select-none">∞</span>
-              <span className="absolute right-6 bottom-6 text-5xl text-white/20 animate-bounce-diag-rev select-none">√</span>
-           {/* Sides */}
-              <span className="absolute left-0 top-1/2 text-6xl text-orange-300/30 animate-bounce-horiz select-none">∫</span>
-              <span className="absolute right-0 top-1/3 text-4xl text-blue-200/30 animate-bounce-horiz-rev select-none">Δ</span>
-              <span className="absolute left-1/2 top-0 text-5xl text-white/20 animate-bounce-vert select-none">α</span>
-              <span className="absolute left-1/2 bottom-0 text-6xl text-orange-300/30 animate-bounce-vert-rev select-none">β</span>
-              <span className="absolute left-0 top-0 text-4xl text-orange-300/30 animate-bounce-diag select-none">Σ</span>
-              <span className="absolute right-0 top-0 text-5xl text-blue-200/30 animate-bounce-diag-rev select-none">θ</span>
-              <span className="absolute left-0 bottom-0 text-5xl text-white/20 animate-bounce-diag select-none">λ</span>
-              <span className="absolute right-0 bottom-0 text-6xl text-orange-300/30 animate-bounce-diag-rev select-none">Ω</span>
-              <span className="absolute right-1/4 top-0 text-5xl text-orange-300/30 animate-bounce-vert-rev select-none">μ</span>
-              <span className="absolute left-1/4 bottom-0 text-4xl text-white/20 animate-bounce-vert select-none">δ</span>
-              <span className="absolute left-1/3 top-1/3 text-5xl text-orange-300/30 animate-bounce-middle select-none">∇</span>
-              <span className="absolute left-1/4 top-1/3 text-5xl text-orange-300/30 animate-bounce-middle select-none">∇</span>
-              <span className="absolute left-1/2 top-1/2 text-6xl text-blue-200/30 animate-bounce-middle-rev select-none">Ψ</span>
-              <span className="absolute right-1/4 top-1/2 text-5xl text-white/20 animate-bounce-middle select-none">φ</span>
-              <span className="absolute left-1/3 bottom-1/3 text-6xl text-orange-300/30 animate-bounce-middle-rev select-none">ζ</span>
-              <span className="absolute right-1/3 bottom-1/2 text-5xl text-blue-200/30 animate-bounce-middle select-none">η</span>
-              <span className="absolute left-1/2 top-1/4 text-5xl text-white/20 animate-bounce-middle-rev select-none">κ</span>
-          </div>
+  <AnimatedSymbols />
+  <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+    {/* ...CTA content... */}
+  </div>
   <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
       Join Sāṅkhya Academy now and unlock your full potential with our expert guidance!
@@ -659,7 +638,7 @@ const App = () => {
             
             <div className="text-center text-gray-400">
               <p>
-                Designed & Developed by{' '}
+                Crafted by{' '}
                 <a
                   href="https://www.linkedin.com/in/akshay-ramesh-201371339"
                   target="_blank"

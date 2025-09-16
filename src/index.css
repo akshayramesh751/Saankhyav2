@@ -247,3 +247,15 @@
 }
 .animate-bounce-middle { animation: bounce-middle 7s ease-in-out infinite; }
 .animate-bounce-middle-rev { animation: bounce-middle-rev 7s ease-in-out infinite; }
+
+@keyframes glow-border {
+  0%, 100% {
+    box-shadow: 0 0 0 0 #3b82f6, 0 0 4px 1px #3b82f6;
+  }
+  50% {
+    box-shadow: 0 0 6px 2px #3b82f6, 0 0 12px 4px #3b82f6;
+  }
+}
+.animate-glow-border {
+  animation: glow-border 1.6s ease-in-out infinite;
+}

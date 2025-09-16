@@ -13,7 +13,7 @@ const qaData: Record<string, Record<string, string>> = {
     "How much are the fees?": "Our fees vary depending on grade and program. Please contact us for a detailed fee structure."
   },
   Teaching: {
-    "What subjects do you teach?": "We offer classes in Mathematics, Science (Physics, Chemistry, and Biology) for high school students. For higher grades, we also provide coaching in Mathematics, Physics, Chemistry, and Biology.",
+    "What subjects do you teach?": "We offer classes in Mathematics, Science (Physics, Chemistry, and Biology) for high school students. For higher grades, we also provide coaching in Mathematics, Physics, Chemistry, and Biology for competitive exams and board exams.",
     "What grade levels do you cover?": "We provide coaching for students from Grade 8 up to Grade 12, including both school syllabus support and competitive exam preparation.",
     "How are classes conducted?": "We offer both offline (in-person) classes at our centre and online live classes for students who prefer studying from home. Parents can choose whichever suits them best.",
     "What makes your academy different from others?": "We focus on personalized attention, labs, simulations and mainly - small batch sizes, regular progress reports, and interactive teaching methods to ensure every child understands concepts thoroughly.",

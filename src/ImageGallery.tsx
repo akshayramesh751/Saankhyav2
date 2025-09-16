@@ -25,7 +25,7 @@ const ImageGallerySection: React.FC = () => {
     <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
       <div className="max-w-6xl mx-auto px-2">
         <h2 className="text-4xl font-bold text-black-900 mb-4 font-serif drop-shadow-lg text-center">Our Gallery</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto mb-2"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto mb-3"></div>
         <div className="relative">
           {/* Left Arrow */}
           <button
