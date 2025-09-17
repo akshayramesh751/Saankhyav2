@@ -319,21 +319,21 @@ const App = () => {
               
             </div>
           </section>
-          {/* Popup Modal for AboutSection */}
-          {showAboutPopup && (
-              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-[10000] bg-black bg-opacity-40 backdrop-blur-sm">
-              <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 relative animate-fade-in-up max-h-[80vh] overflow-y-auto mt-16">
-                <button
-                  onClick={() => setShowAboutPopup(false)}
-                  className="absolute top-10 right-4 text-gray-500 hover:text-orange-500 text-2xl font-bold"
-                  aria-label="Close"
-                >
-                  &times;
-                </button>
-                <AboutSection />
-              </div>
+     {/* Popup Modal for AboutSection */}
+      {showAboutPopup && (
+        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-[10000] bg-black bg-opacity-40 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl shadow-2xl sm:max-w-2xl max-w-[90%] w-full sm:p-8 p-5 relative animate-fade-in-up max-h-[80vh] sm:max-h-[80vh] max-h-[75vh] overflow-y-auto sm:mt-16 mt-10">
+            <button
+              onClick={() => setShowAboutPopup(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-orange-500 text-2xl font-bold z-50 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center shadow-md"
+              aria-label="Close"
+            >
+            &times;
+            </button>
+              <AboutSection />
             </div>
-          )}
+            </div>
+           )}
         </div>
 
         {/* Courses Section (main) */}

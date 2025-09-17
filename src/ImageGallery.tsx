@@ -4,8 +4,14 @@ import React, { useRef } from 'react';
 const galleryItems = [
   { id: '1', imagePath: '/assets/images/Saankhya team 2.png', title: 'Team 2' },
   { id: '2', imagePath: '/assets/images/saankhya team1.png', title: 'Team 1' },
-  { id: '3', imagePath: '/assets/images/Saankhya gallery 2.png', title: 'Gallery 2' },
-  { id: '4', imagePath: '/assets/images/saankhya gallery.png', title: 'Gallery' }, 
+  { id: '3', imagePath: '/assets/images/saankhya team 3.png', title: 'Team 3' },
+  { id: '4', imagePath: '/assets/images/saankhya lab 1.png', title: 'Lab 1' },
+  { id: '5', imagePath: '/assets/images/saankhya lab 2.png', title: 'Lab 2' },
+  { id: '6', imagePath: '/assets/images/saankhya lab 3.png', title: 'Lab 3' },
+  { id: '7', imagePath: '/assets/images/saankhya gallery.png', title: 'Gallery' },
+  { id: '8', imagePath: '/assets/images/saankhya tele.png', title: 'Tele' },
+  { id: '9', imagePath: '/assets/images/saankhya gallery 4.png', title: 'Gallery 4' },
+  { id: '10', imagePath: '/assets/images/saankhya.png', title: 'Team' },
 ];
 
 const ImageGallerySection: React.FC = () => {
