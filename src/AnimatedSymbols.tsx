@@ -12,7 +12,7 @@ const AnimatedSymbols: React.FC = () => {
 
   // Responsive: remove 5 symbols on mobile
   const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
-  const symbols = isMobile ? allSymbols.slice(0, allSymbols.length - 5) : allSymbols;
+  const symbols = isMobile ? allSymbols.slice(0, allSymbols.length - 8) : allSymbols;
 
   const [positions, setPositions] = useState(
     symbols.map(() => ({
