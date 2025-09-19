@@ -39,11 +39,11 @@ const AboutSection: React.FC = () => {
       id: 3,
       title: "A Guiding Philosophy",
       content: (
-        <blockquote className="border-l-4 border-blue-900 pl-6 py-2 italic text-gray-700 my-8 text-xl font-medium relative">
+        <blockquote className="border-l-4 border-blue-900 pl-6 py-2 italic text-gray-700 my-8 text-lg font-medium relative">
           <p className="mb-2">
             “My life belongs to the whole community, and as long as I live it is my privilege to do for it whatever I can.”
           </p>
-          <span className="block mt-4 text-right text-gray-600 font-semibold">— George Bernard Shaw</span>
+          <span className="block mt-1 text-right text-gray-600 font-semibold">— George Bernard Shaw</span>
           {/* Animated accent using a subtle pulse effect */}
           <div className="absolute top-0 -left-2 w-2 h-full bg-orange-400 rounded-full animate-pulse-slow"></div>
         </blockquote>

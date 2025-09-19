@@ -306,7 +306,7 @@ const App = () => {
                     <span className="text-blue-900 font-serif">Sāṅkhya Academy</span>
                   </h2>
                   <p className="text-lg text-gray-600 leading-relaxed mb-10">
-                    "What started as projects in schools and NGOs became Sāṅkhya Academy — not just a tuition centre, but a movement. Founded by us, but truly belonging to students, parents and teachers who built it together."
+                    "What started as projects in schools and NGOs became Sāṅkhya Academy — not just a tuition centre, but a movement. Founded by us, but truly belonging to students, parents and teachers with whom we are building it together."
                   </p>
                   <button
                     onClick={() => setShowAboutPopup(true)}

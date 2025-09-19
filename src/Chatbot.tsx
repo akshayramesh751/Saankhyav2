@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 const qaData: Record<string, Record<string, string>> = {
   Admissions: {
     "What is the admission process?": "The admission process is simple. Parents can fill out our registration form online or visit our centre directly. After a short assessment, your child will be placed in the most suitable batch.",
-    "Which boards do you cover?": "We teach students from multiple boards including CBSE, ICSE, State Boards, and select international boards (IGCSE/IB) depending on demand.",
+    "Which boards do you cover?": "We teach students from multiple boards including CBSE, ICSE, State Boards and select international boards (IGCSE/IB) depending on demand.",
     "What grade levels do you cover?": "We provide coaching for students from Grade 8 up to Grade 12, including both school syllabus support and competitive exam preparation.",
     "How can I contact support?": "Phone: +91-93807 38490, Email: admin@saankhya.academy"
   },
@@ -13,10 +13,10 @@ const qaData: Record<string, Record<string, string>> = {
     "How much are the fees?": "Our fees vary depending on grade and program. Please contact us for a detailed fee structure."
   },
   Teaching: {
-    "What subjects do you teach?": "We offer classes in Mathematics, Science (Physics, Chemistry, and Biology) for high school students. For higher grades, we also provide coaching in Mathematics, Physics, Chemistry, and Biology for competitive exams and board exams.",
+    "What subjects do you teach?": "We offer classes in Mathematics, Science (Physics, Chemistry and Biology) for high school students. For higher grades, we also provide coaching in Mathematics, Physics, Chemistry and Biology for competitive exams and board exams.",
     "What grade levels do you cover?": "We provide coaching for students from Grade 8 up to Grade 12, including both school syllabus support and competitive exam preparation.",
     "How are classes conducted?": "We offer both offline (in-person) classes at our centre and online live classes for students who prefer studying from home. Parents can choose whichever suits them best.",
-    "What makes your academy different from others?": "We focus on personalized attention, labs, simulations and mainly - small batch sizes, regular progress reports, and interactive teaching methods to ensure every child understands concepts thoroughly.",
+    "What makes your academy different from others?": "We focus on personalized attention, labs, simulations and mainly - small batch sizes, regular progress reports and interactive teaching methods to ensure every child understands concepts thoroughly.",
     "What is the student-teacher ratio?": "We maintain small batches with a maximum of 10 to 15 students per teacher, ensuring personal attention and better interaction.",
     "Do you provide extra doubt-clearing sessions?": "Yes, we conduct dedicated doubt-clearing sessions and revision classes, especially before exams, to make sure every student is confident with the syllabus."
   },
@@ -25,12 +25,12 @@ const qaData: Record<string, Record<string, string>> = {
     "Do you provide weekend batches?": "Yes, we have special weekend batches designed for students who have busy schedules during weekdays."
   },
   Results: {
-    "How do you track student progress?": "We conduct regular tests, assignments, and parent-teacher meetings. Parents receive progress reports and feedback so they can track their child’s improvement.",
+    "How do you track student progress?": "We conduct regular tests, assignments and parent-teacher meetings. Parents receive progress reports and feedback so they can track their child’s improvement.",
     "Do you give feedback to parents?": "Yes, we strongly believe in parent involvement. Parents are regularly updated about their child’s performance through meetings and reports.",
     "What results have your students achieved?": "Our students have consistently scored high marks in their school exams and board exams. Many have also successfully cleared competitive exams with our guidance."
   },
   General: {
-    "Do you have extracurricular activities?": "Yes, in addition to academics, we sometimes organize workshops and activities that focus on communication skills, problem-solving, and personality development.",
+    "Do you have extracurricular activities?": "Yes, in addition to academics, we sometimes organize workshops and activities that focus on communication skills, problem-solving and personality development.",
     "How can I contact support?": "Phone: +91-93807 38490, Email: admin@saankhya.academy"
   }
 };

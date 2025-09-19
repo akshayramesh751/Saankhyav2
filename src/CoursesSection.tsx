@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
-import {  FaUserGraduate } from "react-icons/fa";
-import { GiMicroscope, GiProgression } from "react-icons/gi";
+import { GiMicroscope, GiProgression, GiTeacher, } from "react-icons/gi";
 
 const tabContent = {
   structured: {
@@ -35,7 +34,7 @@ const tabContent = {
       "Academic and emotional support",
       "Additional sessions whenever a student feels stuck",
     ],
-    icon: <FaUserGraduate className="text-green-600 text-6xl mx-auto" />,
+    icon: <GiTeacher className="text-green-600 text-6xl mx-auto" />,
   },
 };
 
