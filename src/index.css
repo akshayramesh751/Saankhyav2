@@ -259,3 +259,116 @@
 .animate-glow-border {
   animation: glow-border 1.6s ease-in-out infinite;
 }
+/* Custom styles for About popup */
+.custom-about-popup {
+  overflow: hidden;
+}
+
+.custom-about-popup #about {
+  min-height: auto !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+.custom-about-popup h2 {
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Card height adjustments */
+.custom-about-popup .relative {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+/* Content sizing */
+/* Add to your index.css */
+.custom-about-popup {
+  overflow: hidden;
+}
+
+.custom-about-popup #about {
+  min-height: auto !important;
+  padding: 0 !important;
+  padding-top: 10px !important;
+  background: none !important;
+}
+
+.custom-about-popup h2 {
+  font-size: 2.5rem !important;
+  margin-bottom: 0.5rem !important;
+  text-align: center !important;
+}
+
+.custom-about-popup .card-container {
+  height: auto !important;
+  min-height: 250px !important;
+  margin-top: 1rem !important;
+}
+
+/* Make content visible and properly sized */
+.custom-about-popup .text-base {
+  font-size: 0.95rem !important;
+}
+
+/* Adjust buttons and controls */
+.custom-about-popup button[aria-label="Next Card"] {
+  bottom: 10px !important;
+  right: 10px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .custom-about-popup h2 {
+    font-size: 2rem !important;
+    margin-top: 0 !important;
+  }
+  
+  .custom-about-popup h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .custom-about-popup .card-container {
+    min-height: 280px !important;
+  }
+}
+/* Custom styles for About popup */
+.custom-about-popup {
+  overflow: hidden;
+}
+
+.custom-about-popup #about {
+  min-height: auto !important;
+  padding: 0 !important;
+  background: none !important;
+}
+
+.custom-about-popup h2 {
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Card height adjustments */
+.custom-about-popup .relative {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+/* Content sizing */
+.custom-about-popup .text-lg {
+  font-size: 1rem !important;
+}
+
+@media (max-width: 640px) {
+  .custom-about-popup h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  .custom-about-popup h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .custom-about-popup .text-lg {
+    font-size: 0.9rem !important;
+  }
+}

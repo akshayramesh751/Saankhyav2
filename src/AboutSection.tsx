@@ -110,24 +110,27 @@ const AboutSection: React.FC = () => {
   };
 
   return (
-    <section id="about" className="relative bg-gradient-to-br from-white via-blue-50 to-orange-50 py-20 min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Watermark background image with enhanced styling */}
+    <section
+      id="about"
+      className="relative bg-gradient-to-br from-white via-blue-50 to-orange-50 py-8 sm:py-16 flex flex-col items-center justify-center overflow-hidden"
+      style={{ minHeight: "unset", height: "100%" }} // Remove min-h-screen
+    >
+      {/* Watermark background image */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
         <img
           src="/assets/logos/Black Trans no word.png"
           alt="Watermark"
-          className="w-full max-w-sm opacity-5 sm:opacity-7 object-contain mx-auto animate-pulse-slow"
+          className="w-full max-w-xs sm:max-w-sm opacity-5 sm:opacity-7 object-contain mx-auto animate-pulse-slow"
           style={{ filter: "blur(2px)" }}
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-4 md:px-8">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-8 sm:mb-16 text-center font-serif leading-tight tracking-wide drop-shadow-md">
+      <div className="relative z-10 w-full max-w-lg sm:max-w-2xl mx-auto px-2 sm:px-6">
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-4 sm:mb-8 text-center font-serif leading-tight tracking-wide drop-shadow-md">
           <span className="text-blue-900">Our</span> <span className="text-blue-900">Journey</span>
         </h2>
 
-        {/* Increased height for mobile */}
-        <div className="relative w-full h-[450px] sm:h-[350px] min-h-[300px] flex items-center justify-center">
+        <div className="relative w-full h-[320px] sm:h-[320px] flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentCard.id}
@@ -137,23 +140,20 @@ const AboutSection: React.FC = () => {
               exit="exit"
               className="absolute w-full h-full p-1 bg-gradient-to-br from-white to-blue-50 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 ease-in-out"
             >
-              {/* Better padding for mobile */}
-              <div className={`bg-white p-4 sm:p-8 rounded-lg border-t-8 border-${currentCard.color} w-full h-full flex flex-col justify-between`}>
+              <div className={`bg-white p-3 sm:p-6 rounded-lg border-t-8 border-${currentCard.color} w-full h-full flex flex-col justify-between`}>
                 <div className="flex-grow">
-                  <h3 className={`text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 ${currentCard.color === 'blue-900' ? 'text-blue-900' : 'text-orange-400'}`}>
+                  <h3 className={`text-lg sm:text-2xl font-bold mb-2 sm:mb-3 ${currentCard.color === 'blue-900' ? 'text-blue-900' : 'text-orange-400'}`}>
                     {currentCard.title}
                   </h3>
-                  <div className="text-base sm:text-lg leading-relaxed">
+                  <div className="text-sm sm:text-base leading-relaxed">
                     {currentCard.content}
                   </div>
                 </div>
-                
-                {/* Timeline dots - proper spacing on mobile */}
-                <div className="flex justify-center items-center mt-4 sm:mt-6 space-x-3 sm:space-x-4 pb-2 sm:pb-0">
+                <div className="flex justify-center items-center mt-2 sm:mt-4 space-x-2 sm:space-x-4 pb-1 sm:pb-0">
                   {sections.map((_, index) => (
                     <div
                       key={index}
-                      className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-125
+                      className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-125
                         ${index === currentCardIndex ? 'bg-blue-900 scale-125' : 'bg-gray-300'}`}
                       onClick={() => handleTimelineClick(index)}
                       title={sections[index].title}
@@ -161,15 +161,13 @@ const AboutSection: React.FC = () => {
                   ))}
                 </div>
               </div>
-              
-              {/* Adjusted button position for mobile */}
               {currentCardIndex < sections.length - 1 && (
                 <button
                   onClick={handleNextCard}
-                  className="absolute bottom-4 right-4 p-2 sm:p-3 rounded-full bg-blue-900 text-white shadow-lg transition-transform duration-200 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
+                  className="absolute bottom-3 right-3 p-2 sm:p-3 rounded-full bg-blue-900 text-white shadow-lg transition-transform duration-200 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
                   aria-label="Next Card"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
