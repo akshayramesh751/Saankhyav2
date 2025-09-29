@@ -358,12 +358,12 @@ const App = () => {
           {
             title: 'PUC I',
             subtitle: 'Science',
-            courses: ['KCET', 'JEE', 'Other competetive exams']
+            courses: ['KCET', 'NEET', 'Other competetive exams']
           },
           {
             title: 'PUC II',
             subtitle: 'Science',
-            courses: ['KCET', 'JEE', 'Other competetive exams']
+            courses: ['KCET', 'NEET', 'Other competetive exams']
           }
               ].map((board, index) => (
           <div
