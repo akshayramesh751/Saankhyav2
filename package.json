@@ -1,6 +1,5 @@
 {
-  "name": "vite-react-typescript-starter",
-  "homepage": "https://akshayramesh751.github.io/Saankhyav2",
+  "name": "saankhya-academy",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,13 +8,12 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "firebase:serve": "firebase serve",
+    "firebase:deploy": "firebase deploy"
   },
   "dependencies": {
     "chart.js": "^4.5.0",
     "framer-motion": "^12.23.12",
-    "gh-pages": "^6.3.0",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
