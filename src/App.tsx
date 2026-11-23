@@ -356,12 +356,12 @@ const App = () => {
             courses: ['Class 8: Math and Science','Class 9: Math and Science', 'Class 10: Math and Science']
           },
           {
-            title: 'PUC I',
+            title: 'PUC',
             subtitle: 'Science',
             courses: ['KCET', 'NEET', 'Other competetive exams']
           },
           {
-            title: 'PUC II',
+            title: 'ISC',
             subtitle: 'Science',
             courses: ['KCET', 'NEET', 'Other competetive exams']
           }
@@ -516,7 +516,7 @@ const App = () => {
                   <input 
                     type="hidden" 
                     name="access_key" 
-                    value="59123046-13a5-4f6d-b4db-754756d3d7e3"
+                    value="778862d6-01af-491c-83f1-80dba6b71e96"
                   />
                   <input
                     type="text"
@@ -636,7 +636,8 @@ const App = () => {
               ))}
             </div>
             
-            <div className="text-center text-gray-400">
+            <div className="text-center text-gray-400 space-y-2">
+              <p>Sole Proprietor: Shashank V Ramamurthy</p>
               <p>
                 Developed by{' '}
                 <a

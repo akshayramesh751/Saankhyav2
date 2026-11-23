@@ -15,7 +15,7 @@ const qaData: Record<string, Record<string, string>> = {
   Teaching: {
     "What subjects do you teach?": "We offer classes in Mathematics, Science (Physics, Chemistry and Biology) for high school students. For higher grades, we also provide coaching in Mathematics, Physics, Chemistry and Biology for competitive exams and board exams.",
     "What grade levels do you cover?": "We provide coaching for students from Grade 8 up to Grade 12, including both school syllabus support and competitive exam preparation.",
-    "How are classes conducted?": "We offer both offline (in-person) classes at our centre and online live classes for students who prefer studying from home. Parents can choose whichever suits them best.",
+    "How are classes conducted?": "All classes are conducted offline (in-person) at our centre. We do not offer online live classes.",
     "What makes your academy different from others?": "We focus on personalized attention, labs, simulations and mainly - small batch sizes, regular progress reports and interactive teaching methods to ensure every child understands concepts thoroughly.",
     "What is the student-teacher ratio?": "We maintain small batches with a maximum of 10 to 15 students per teacher, ensuring personal attention and better interaction.",
     "Do you provide extra doubt-clearing sessions?": "Yes, we conduct dedicated doubt-clearing sessions and revision classes, especially before exams, to make sure every student is confident with the syllabus."

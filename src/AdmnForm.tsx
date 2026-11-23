@@ -77,7 +77,7 @@ const ApplyNowModal: React.FC<{ open: boolean; onClose: () => void }> = ({ open,
               className="space-y-5"
               onSubmit={handleSubmit}
             >
-              <input type="hidden" name="access_key" value="59123046-13a5-4f6d-b4db-754756d3d7e3" />
+              <input type="hidden" name="access_key" value="778862d6-01af-491c-83f1-80dba6b71e96" />
               <input type="hidden" name="subject" value="New Admission Form Submission" />
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Student's Name</label>
@@ -191,4 +191,3 @@ export default function AboutApplyButton() {
     </>
   );
 }
-
