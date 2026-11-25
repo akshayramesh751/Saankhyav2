@@ -54,17 +54,17 @@ const App = () => {
   useEffect(() => {
     // Reset scroll position to top
     window.scrollTo(0, 0);
-    
+
     // Reset hero visibility
     const hero = document.getElementById('hero');
     if (hero) {
       hero.style.display = 'flex';
     }
-    
+
     // Reset transitions and scroll lock
     setIsTransitioning(false);
     document.body.style.overflow = 'hidden';
-    
+
     // Clear any existing scroll position from browser memory
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
@@ -74,7 +74,7 @@ const App = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
@@ -89,7 +89,7 @@ const App = () => {
     setTimeout(() => {
       const element = document.getElementById('about');
       if (element) {
-        element.scrollIntoView({ 
+        element.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
@@ -110,14 +110,12 @@ const App = () => {
   const NavLink = ({ href, children, isActive }: { href: string; children: React.ReactNode; isActive: boolean }) => (
     <button
       onClick={() => scrollToSection(href)}
-      className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 hover:text-orange-400 ${
-        isActive ? 'text-orange-400' : 'text-white'
-      }`}
+      className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 hover:text-orange-400 ${isActive ? 'text-orange-400' : 'text-white'
+        }`}
     >
       {children}
-      <span className={`absolute bottom-0 left-0 h-0.5 bg-orange-400 transition-all duration-300 ${
-        isActive ? 'w-full' : 'w-0 group-hover:w-full'
-      }`} />
+      <span className={`absolute bottom-0 left-0 h-0.5 bg-orange-400 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
+        }`} />
     </button>
   );
 
@@ -168,15 +166,15 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0 flex items-center h-16">
-            <img 
-              src="/assets/logos/output-onlinepngtools.png" 
-              alt="Sāṅkhya Academy Logo"
-              className="h-[6.25rem] w-auto max-h-16 md:max-h-[6.25rem] object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-              style={{ maxHeight: '6.25rem' }}
-              onClick={() => scrollToSection('about')}
-             />
+              <img
+                src="/assets/logos/output-onlinepngtools.png"
+                alt="Sāṅkhya Academy Logo"
+                className="h-[6.25rem] w-auto max-h-16 md:max-h-[6.25rem] object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                style={{ maxHeight: '6.25rem' }}
+                onClick={() => scrollToSection('about')}
+              />
             </div>
-            
+
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 <NavLink href="about" isActive={activeSection === 'about'}>ABOUT</NavLink>
@@ -186,7 +184,7 @@ const App = () => {
                 <NavLink href="contact" isActive={activeSection === 'contact'}>CONTACT</NavLink>
               </div>
             </div>
-            
+
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -197,7 +195,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Mobile menu */}
         <div className={`md:hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-blue-900/95 backdrop-blur-sm">
@@ -211,14 +209,13 @@ const App = () => {
       </nav>
 
       {/* Main container - Add padding-top to account for fixed nav */}
-      <div className={`min-h-screen bg-white transition-all duration-700 ease-in-out pt-16 ${
-        isTransitioning ? 'transform translate-y(-2rem)' : 'transform translate-y(0)'
-      }`}>
+      <div className={`min-h-screen bg-white transition-all duration-700 ease-in-out pt-16 ${isTransitioning ? 'transform translate-y(-2rem)' : 'transform translate-y(0)'
+        }`}>
         {/* Hero Section */}
-        <section 
-          id="hero" 
+        <section
+          id="hero"
           className="fixed inset-0 flex flex-col z-[10000] bg-gradient-to-br from-blue-900/30 via-blue-800/30 to-blue-700/30 backdrop-blur-md transition-all duration-700 ease-in-out transform"
-          style={{ 
+          style={{
             opacity: isTransitioning ? 0 : 1,
             transform: isTransitioning ? 'translateY(-100%)' : 'translateY(0)',
             pointerEvents: isTransitioning ? 'none' : 'auto',
@@ -228,9 +225,9 @@ const App = () => {
           <div className="flex-grow flex items-center justify-center">
             <div className="text-center px-4 max-w-4xl mx-auto">
               <div className="mb-8 sm:mb-12 mt-4 sm:mt-8">
-                <img 
-                  src="/assets/logos/Black Trans no word.png" 
-                  alt="Sāṅkhya Academy Logo" 
+                <img
+                  src="/assets/logos/Black Trans no word.png"
+                  alt="Sāṅkhya Academy Logo"
                   className="w-32 h-32 sm:w-48 sm:h-48 mx-auto mb-6 sm:mb-8 animate-fade-in-down cursor-pointer hover:scale-105 transition-transform duration-300"
                   onClick={handleExploreNow}
                   style={{ cursor: 'pointer' }}
@@ -294,9 +291,9 @@ const App = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 <div className="animate-fade-in-left">
-                  <img 
+                  <img
                     src="/assets/images/about.png"
-                    alt="Academy Banner" 
+                    alt="Academy Banner"
                     className="w-full h-80 object-cover rounded-2xl"
                   />
                 </div>
@@ -316,24 +313,24 @@ const App = () => {
                   </button>
                 </div>
               </div>
-              
+
             </div>
           </section>
-     {/* Popup Modal for AboutSection */}
-      {showAboutPopup && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-[10000] bg-black bg-opacity-40 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl sm:max-w-2xl max-w-[90%] w-full sm:p-8 p-5 relative animate-fade-in-up max-h-[80vh] sm:max-h-[80vh] max-h-[75vh] overflow-y-auto sm:mt-16 mt-10">
-            <button
-              onClick={() => setShowAboutPopup(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-orange-500 text-2xl font-bold z-50 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center shadow-md"
-              aria-label="Close"
-            >
-            &times;
-            </button>
-              <AboutSection />
+          {/* Popup Modal for AboutSection */}
+          {showAboutPopup && (
+            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-[10000] bg-black bg-opacity-40 backdrop-blur-sm">
+              <div className="bg-white rounded-2xl shadow-2xl sm:max-w-2xl max-w-[90%] w-full sm:p-8 p-5 relative animate-fade-in-up max-h-[80vh] sm:max-h-[80vh] max-h-[75vh] overflow-y-auto sm:mt-16 mt-10">
+                <button
+                  onClick={() => setShowAboutPopup(false)}
+                  className="absolute top-4 right-4 text-gray-500 hover:text-orange-500 text-2xl font-bold z-50 bg-white/80 rounded-full w-8 h-8 flex items-center justify-center shadow-md"
+                  aria-label="Close"
+                >
+                  &times;
+                </button>
+                <AboutSection />
+              </div>
             </div>
-            </div>
-           )}
+          )}
         </div>
 
         {/* Courses Section (main) */}
@@ -343,51 +340,51 @@ const App = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-4 font-serif">What Do We Offer</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto mb-2"></div>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* All boards/courses in one row */}
               {[
-          {
-            title: 'ICSE',
-            courses: ['Class 8: Math and Science', 'Class 9: Math and Science', 'Class 10: Math and Science']
-          },
-          {
-            title: 'CBSE',
-            courses: ['Class 8: Math and Science','Class 9: Math and Science', 'Class 10: Math and Science']
-          },
-          {
-            title: 'PUC',
-            subtitle: 'Science',
-            courses: ['KCET', 'NEET', 'Other competetive exams']
-          },
-          {
-            title: 'ISC',
-            subtitle: 'Science',
-            courses: ['KCET', 'NEET', 'Other competetive exams']
-          }
+                {
+                  title: 'ICSE',
+                  courses: ['Class 8: Math and Science', 'Class 9: Math and Science', 'Class 10: Math and Science']
+                },
+                {
+                  title: 'CBSE',
+                  courses: ['Class 8: Math and Science', 'Class 9: Math and Science', 'Class 10: Math and Science']
+                },
+                {
+                  title: 'PUC',
+                  subtitle: 'Science',
+                  courses: ['KCET', 'NEET', 'Other competetive exams']
+                },
+                {
+                  title: 'ISC',
+                  subtitle: 'Science',
+                  courses: ['KCET', 'NEET', 'Other competetive exams']
+                }
               ].map((board, index) => (
-          <div
-            key={board.title}
-            className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex flex-col mx-auto"
-            style={{ minWidth: '220px', maxWidth: '320px', width: '100%', animationDelay: `${index * 200}ms` }}
-          >
-            <div className="text-center mb-4">
-              <h3 className="text-xl font-bold text-gray-900 mb-2 font-serif">{board.title}</h3>
-              {board.subtitle && (
-                <h4 className="text-base font-semibold text-blue-700 mb-2">{board.subtitle}</h4>
-              )}
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-900 to-blue-700 rounded-full flex items-center justify-center mx-auto">
-                <BookOpen className="w-6 h-6 text-white" />
-              </div>
-            </div>
-            <ul className="space-y-2 flex-grow">
-              {board.courses.map((course, courseIndex) => (
-                <li key={courseIndex} className="text-gray-700 font-medium text-center py-1 px-2 bg-white/50 rounded-lg text-sm">
-            {course}
-                </li>
-              ))}
-            </ul>
-          </div>
+                <div
+                  key={board.title}
+                  className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up flex flex-col mx-auto"
+                  style={{ minWidth: '220px', maxWidth: '320px', width: '100%', animationDelay: `${index * 200}ms` }}
+                >
+                  <div className="text-center mb-4">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 font-serif">{board.title}</h3>
+                    {board.subtitle && (
+                      <h4 className="text-base font-semibold text-blue-700 mb-2">{board.subtitle}</h4>
+                    )}
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-900 to-blue-700 rounded-full flex items-center justify-center mx-auto">
+                      <BookOpen className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <ul className="space-y-2 flex-grow">
+                    {board.courses.map((course, courseIndex) => (
+                      <li key={courseIndex} className="text-gray-700 font-medium text-center py-1 px-2 bg-white/50 rounded-lg text-sm">
+                        {course}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
           </div>
@@ -401,7 +398,7 @@ const App = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-4 font-serif">Why Choose Us</h2> {/* Reduced text-4xl to text-3xl and mb-4 to mb-2 */}
               <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto mb-1"></div>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 { title: 'Quiet Study Space / Library', icon: BookOpen },
@@ -411,25 +408,25 @@ const App = () => {
               ].map((feature, index) => (
                 // Find the Features section and update the image container div:
 
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 text-center hover:shadow-2xl group"
-              >
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <feature.icon className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-              <div className="w-full h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm ">
-               <img
-                src={featureImages[index]}
-                alt={feature.title}
-                className="h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"
-                style={{
-                   transition: 'transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
-              }}
-              />
-            </div>
-            </div>
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 text-center hover:shadow-2xl group"
+                >
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <feature.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                  <div className="w-full h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm ">
+                    <img
+                      src={featureImages[index]}
+                      alt={feature.title}
+                      className="h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"
+                      style={{
+                        transition: 'transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+                      }}
+                    />
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -448,26 +445,26 @@ const App = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-4 font-serif">Reach Out To Us</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-900 to-orange-400 mx-auto"></div>
             </div>
-            
+
             {/* Map */}
             {/* Map */}
-          <div className="mb-16">
-          <iframe 
-           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.0527844808507!2d77.56183577507703!3d13.006572887312027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xcebff8930bc97d7%3A0x978d4ea8614faee5!2sSaankhya%20Academy!5e1!3m2!1sen!2sin!4v1755021297820!5m2!1sen!2sin"
-            className="w-full h-96 rounded-2xl"
-            style={{ border: 0 }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-          </div>
-            
+            <div className="mb-16">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.0527844808507!2d77.56183577507703!3d13.006572887312027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xcebff8930bc97d7%3A0x978d4ea8614faee5!2sSaankhya%20Academy!5e1!3m2!1sen!2sin!4v1755021297820!5m2!1sen!2sin"
+                className="w-full h-96 rounded-2xl"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-12">
               {/* Contact Info */}
               <div className="space-y-8">
-                <a 
-                  href="https://maps.app.goo.gl/oHGUH5xEf4iQ1YdH8" 
-                  target="_blank" 
+                <a
+                  href="https://maps.app.goo.gl/oHGUH5xEf4iQ1YdH8"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start space-x-4 group cursor-pointer"
                 >
@@ -480,9 +477,9 @@ const App = () => {
                     <p className="text-gray-600">Bengaluru, Karnataka 560003</p>
                   </div>
                 </a>
-                
-                <a 
-                  href="tel:+919380738490" 
+
+                <a
+                  href="tel:+919380738490"
                   className="flex items-start space-x-4 group cursor-pointer"
                 >
                   <div className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center group-hover:bg-orange-500 transition-all duration-300">
@@ -494,9 +491,9 @@ const App = () => {
                     <p className="text-gray-600">Monday to Saturday, 10AM to 8PM</p>
                   </div>
                 </a>
-                
-                <a 
-                  href="mailto:admin@saankhya.academy" 
+
+                <a
+                  href="mailto:admin@saankhya.academy"
                   className="flex items-start space-x-4 group cursor-pointer"
                 >
                   <div className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center group-hover:bg-orange-500 transition-all duration-300">
@@ -509,13 +506,13 @@ const App = () => {
                   </div>
                 </a>
               </div>
-              
+
               {/* Contact Form */}
               <div>
                 <form className="space-y-6" onSubmit={handleSubmit}>
-                  <input 
-                    type="hidden" 
-                    name="access_key" 
+                  <input
+                    type="hidden"
+                    name="access_key"
                     value="778862d6-01af-491c-83f1-80dba6b71e96"
                   />
                   <input
@@ -548,16 +545,15 @@ const App = () => {
                   ></textarea>
                   <button
                     type="submit"
-                    className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg ${
-                      formStatus === 'sending' 
-                        ? 'bg-gray-500 text-white cursor-not-allowed' 
+                    className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg ${formStatus === 'sending'
+                        ? 'bg-gray-500 text-white cursor-not-allowed'
                         : 'bg-blue-900 text-white hover:bg-orange-500'
-                    }`}
+                      }`}
                     disabled={formStatus === 'sending'}
                   >
                     {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
                   </button>
-                  
+
                   {/* Status Messages */}
                   {formStatus === 'success' && (
                     <div className="text-green-500 text-center">Message sent successfully!</div>
@@ -572,51 +568,51 @@ const App = () => {
         </section>
 
         {/* CTA Section */}
-       <section className="py-10 bg-gradient-to-r from-blue-900 to-blue-800 relative overflow-hidden">
-  <AnimatedSymbols />
-  <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
-    {/* ...CTA content... */}
-  </div>
-  <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
-    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-      Join Sāṅkhya Academy now and unlock your full potential with our expert guidance!
-    </h2>
-    <button
-      onClick={() => scrollToSection('contact')}
-      className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg hover:bg-orange-400 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl"
-    >
-      CONTACT US
-    </button>
-  </div>
-</section>
+        <section className="py-10 bg-gradient-to-r from-blue-900 to-blue-800 relative overflow-hidden">
+          <AnimatedSymbols />
+          <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+            {/* ...CTA content... */}
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+              Join Sāṅkhya Academy now and unlock your full potential with our expert guidance!
+            </h2>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg hover:bg-orange-400 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl"
+            >
+              CONTACT US
+            </button>
+          </div>
+        </section>
 
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h3 className="text-2xl font-bold mb-6">About Us</h3>
-                <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Sāṅkhya Academy nurtures curiosity and excellence through expert tutors and personalized, experiential learning—empowering students to master concepts and apply them in real life.
-                </p>
+              </p>
             </div>
-            
+
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
               <a
-              href="tel:+919380738490"
-              className="flex items-center space-x-2 text-blue-400 hover:text-orange-400 transition-colors"
+                href="tel:+919380738490"
+                className="flex items-center space-x-2 text-blue-400 hover:text-orange-400 transition-colors"
               >
-              <Phone className="w-5 h-5" />
-              <span>+91 93807 38490</span>
+                <Phone className="w-5 h-5" />
+                <span>+91 93807 38490</span>
               </a>
               <a
-              href="mailto:admin@saankhya.academy"
-              className="flex items-center space-x-2 text-blue-400 hover:text-orange-400 transition-colors"
+                href="mailto:admin@saankhya.academy"
+                className="flex items-center space-x-2 text-blue-400 hover:text-orange-400 transition-colors"
               >
-              <Mail className="w-5 h-5" />
-              <span>admin@saankhya.academy</span>
+                <Mail className="w-5 h-5" />
+                <span>admin@saankhya.academy</span>
               </a>
             </div>
-            
+
             <div className="flex justify-center space-x-6 mb-8">
               {[
                 { Icon: Facebook, href: '#' },
@@ -635,9 +631,9 @@ const App = () => {
                 </a>
               ))}
             </div>
-            
+
             <div className="text-center text-gray-400 space-y-2">
-              <p>Sole Proprietor: Shashank V Ramamurthy</p>
+              <p>Sole Proprietor: Shashank R</p>
               <p>
                 Developed by{' '}
                 <a
@@ -653,9 +649,9 @@ const App = () => {
           </div>
         </footer>
       </div>
-        {!isHeroVisible && <AboutApplyButton />} 
-        {/* Floating Chatbot Widget - only show when hero is NOT visible */}
-        {!isHeroVisible && <Chatbot />}
+      {!isHeroVisible && <AboutApplyButton />}
+      {/* Floating Chatbot Widget - only show when hero is NOT visible */}
+      {!isHeroVisible && <Chatbot />}
     </div>
   );
 };
